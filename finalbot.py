@@ -17,9 +17,15 @@ from telegram.ext import (
     ContextTypes,
 )
 
-# ---------- CONFIG ----------
-BOT_TOKEN = os.getenv("BOT_TOKEN", "7253390369:AAHqtQfOM1as2B7NyCKSC8MY512gIB1nuBc")
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://botdb_x8ub_user:HuWuttPwjrL13vvnCYpjJn2iit1ZSZHg@dpg-d3doci8dl3ps73c2cm6g-a.singapore-postgres.render.com/botdb_x8ub")
+# 1️⃣ Import dotenv
+from dotenv import load_dotenv
+
+# 2️⃣ Load environment variables from .env
+load_dotenv()
+
+# 3️⃣ Access them as before
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Words to check for exact matches
 AD_WORDS = {"ad", "all done", "AD", "all dn", "alldone", "done", "dn"}
